@@ -1,6 +1,11 @@
 - hosts: all
   gather_facts: yes
   tasks:
-    - debug: var=hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2]
-    - debug: 
-      command: w
+    - name: Upgrade all packages
+      apt:
+        name: '*'
+        state: latest
+        security: yes
+    - name: test getting IP
+      debug:
+        command: w
