@@ -5,7 +5,6 @@
       apt:
         name: '*'
         state: latest
-        security: yes
     - name: test getting IP
       debug:
         command: w
