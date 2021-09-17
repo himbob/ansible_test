@@ -4,3 +4,6 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+    - name: Get IP Info
+        - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+        - debug: var=hostvars[inventory_hostname]['ansible_default_ipv6']['address']
