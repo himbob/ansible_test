@@ -3,8 +3,9 @@
   tasks:
     - name: Upgrade all packages
       apt:
-        name: '*'
-        state: latest
+        update_cache: true
+        cache_valid_time: 3600
+        force_apt_get: true
     - name: test getting IP
       debug:
         command: w
