@@ -3,13 +3,9 @@
   become_method: sudo
   gather_facts: yes
   tasks:
-    - name: List files and folder in home directory
-      shell: 'ls -l'
-      register: command_output
-                      - debug:
-                var: command_output.stdout_lines
-    - name: "Update Repository cache"
-      apt:
-        update_cache: true
-        cache_valid_time: 3600
-        force_apt_get: true
+    - shell: ls
+      register: shell_result
+
+    - debug:
+        var: shell_result.stdout_lines
+
