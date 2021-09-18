@@ -5,6 +5,9 @@
   tasks:
     - name: test logged in users
       command: w
+      register: command_output
+      - debug:
+        var: command_output.stdout_lines
     - name: "Update Repository cache"
       apt:
         update_cache: true
