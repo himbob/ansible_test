@@ -3,11 +3,11 @@
   become_method: sudo
   gather_facts: yes
   tasks:
-    - name: test logged in users
-      command: w
+    - name: List files and folder in home directory
+      shell: 'ls -l'
       register: command_output
-      debug:
-        var: command_output.stdout_lines
+                      - debug:
+                var: command_output.stdout_lines
     - name: "Update Repository cache"
       apt:
         update_cache: true
