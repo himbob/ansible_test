@@ -1,11 +1,6 @@
 - hosts: all
   gather_facts: yes
   tasks:
-    - name: Upgrade all packages
-      apt:
-        update_cache: true
-        cache_valid_time: 3600
-        force_apt_get: true
-    - name: test getting IP
+    - name: test logged in users
       debug:
         command: w
