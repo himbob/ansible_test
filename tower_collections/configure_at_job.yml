@@ -12,3 +12,4 @@
       command: ls -d / >/dev/null
       count: 20
       units: minutes
+    become: yes
