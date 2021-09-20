@@ -1,3 +1,4 @@
 ---
 collections:
-  - ansible.posixxxxx
+  - ansible.posix
+  - community.zabbix
