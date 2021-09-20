@@ -4,7 +4,7 @@
 
   tasks:
   - name: at command needs to be installed
-    yum:
+    apt:
       name: at
       state: present
 
