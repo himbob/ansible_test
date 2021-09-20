@@ -1,0 +1,15 @@
+---
+- name: Install AT Job
+  hosts: all
+
+  tasks:
+  - name: at command needs to be installed
+    yum:
+      name: at
+      state: present
+
+  - name: Schedule a command to execute in 20 minutes as root
+    ansible.posix.at:
+      command: ls -d / >/dev/null
+      count: 20
+      units: minutes
