@@ -1,11 +1,5 @@
+---
 - hosts: all
-  become: yes
-  become_method: sudo
-  gather_facts: yes
-  tasks:
-    - shell: w
-      register: shell_result
-
-    - debug:
-        var: shell_result.stdout_lines
-
+  become: true
+  roles:
+    - role: community.zabbix.zabbix_agent
