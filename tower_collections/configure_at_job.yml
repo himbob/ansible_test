@@ -1,5 +1,7 @@
 ---
 - hosts: all
   become: true
+  collections:
+    - community.zabbix
   roles:
     - role: community.zabbix.zabbix_agent
