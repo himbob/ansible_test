@@ -3,5 +3,9 @@
     - name: Run ls.sh and output "ls /"
       command: ls -l;whoami
       register: out
-
+    
+    - name: Run whoami
+      command: whoami
+      register: out
+      
     - debug: var=out.stdout_lines
