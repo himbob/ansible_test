@@ -1,7 +1,15 @@
 ---
 - hosts: all
-  become: true
   collections:
     - community.zabbix
-  roles:
-    - role: community.zabbix.zabbix_agent
+  tasks:
+    - name: Import zabbix-agent role
+      import_role:
+        name: zabbix-agent
+  vars:
+    zabbix_agent_version: 5.0
+    zabbix_version_long: 5.0.1
+    zabbix_agent_server: ###zabbix-server###
+    zabbix_agent_serveractive: ###zabbix-server###
+    zabbix_url: https://###zabbix-server###
+    zabbix_agent_become_on_localhost: false
