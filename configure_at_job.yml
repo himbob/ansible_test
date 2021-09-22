@@ -6,6 +6,7 @@
 
   roles:
     - role: community.zabbix.zabbix_agent
+      zabbix_install_pip_packages: false
       #zabbix_agent_server: 192.168.33.30
       #zabbix_agent_serveractive: 192.168.33.30
       #zabbix_url: http://zabbix.example.com
