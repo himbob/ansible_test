@@ -1,12 +1,12 @@
 ---
 - hosts: localhost
   tasks:
-    - name: install packages
+    - name: List files and folder in home directory
       become: true
       become_user: root
-      become_exe: /usr/bin/sudo
-      dnf:
-        state: present
-        name:
-         - tcsh
-         - htop
+      shell: 'ls -l'
+      register: command_output
+      debug:
+        var: command_output.stdout_lines
+                      - debug:
+                var: command_output.stdout_lines
