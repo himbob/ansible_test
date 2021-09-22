@@ -1,12 +1,7 @@
----
-- hosts: localhost
+- hosts: all
   tasks:
-    - name: List files and folder in home directory
-      become: true
-      become_user: root
-      shell: 'ls -l'
-      register: command_output
-      debug:
-        var: command_output.stdout_lines
-                      - debug:
-                var: command_output.stdout_lines
+    - name: Run ls.sh and output "ls /"
+      script: ls.sh
+      register: out
+
+    - debug: var=out.stdout_lines
