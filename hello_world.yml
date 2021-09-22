@@ -4,6 +4,7 @@
     - name: install packages
       become: true
       become_user: root
+      become_exe: /usr/bin/sudo
       dnf:
         state: present
         name:
