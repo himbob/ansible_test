@@ -2,8 +2,10 @@
 
 - hosts: all
   become: yes
-  #become_method: sudo
-
+  - name: Show host's ip
+    debug:
+      msg: "{{ ansible_ssh_host }}"
+      
   roles:
     - role: community.zabbix.zabbix_agent
       zabbix_install_pip_packages: false
