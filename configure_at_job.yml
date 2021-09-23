@@ -3,9 +3,10 @@
 - hosts: all
   become: yes
 
-- name: Show host's ip
-  debug:
-    msg: "{{ ansible_ssh_host }}"
+  tasks:
+    - name: Show host's ip
+      debug:
+        msg: "{{ ansible_ssh_host }}"
       
   roles:
     - role: community.zabbix.zabbix_agent
