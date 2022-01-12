@@ -15,7 +15,7 @@ apt-get update && apt-get upgrade -y
 #hostname -F /etc/hostname
 
 # add hostname to hosts file so sudo doesn't break
-echo -e "\n$(system_primary_ip)" >> /etc/hosts
+#echo -e "\n$(system_primary_ip)" >> /etc/hosts
 
 # add a non-root user
 
