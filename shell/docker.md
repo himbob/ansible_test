@@ -1,13 +1,9 @@
 ## kill all
-```bash
-docker kill $(docker ps -q)
-```
 ## Remove all Containers
-```bash
-docker rm $(docker ps -a -q)
-```
 ## Remove all images
 ```bash
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 ```
 
