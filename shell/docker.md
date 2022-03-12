@@ -1,25 +1,33 @@
 ## kill all
+```bash
 docker kill $(docker ps -q)
-
+```
 ## Remove all Containers
+```bash
 docker rm $(docker ps -a -q)
-
+```
 ## Remove all images
+```bash
 docker rmi $(docker images -q)
-
--#-d = detach mode
--#-p = map container port to host port
--#--name create hard coded name
-docker run --name catdog -d -p 6667:6379 redis
+```
 
 ## basics
+```bash
 docker ps
 docker images
 docker start <contID>
 docker stop <contID>
+```
 
+|flag|desc|
+|--------|-----------------------------|
+|-d | detach mode|
+|-p | map container port to host port|
+|--name | create hard coded name|
+```bash
+docker run --name catdog -d -p 6667:6379 redis  
 
-#list all the containers available locally  (incl the size)
+#### list all the containers available locally  (incl the size)
 docker ps -as
 
 #container logs logs
@@ -39,7 +47,7 @@ docker network ls
 docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network mongo    
   
 docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password --net mongo-network --name mongo-express -e ME_CONFIG_MONGODB_SERVER=mongodb mongo-express   
-  
+```  
   
   
   
