@@ -50,6 +50,9 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG
 #how to build an image from a local Dockerfile
 docker build -t my-app:1.0 .
 
+# How to inspect your baby
+docker container inspect 08957bb307f0 08957bb307f0
+
 ```  
   
   
