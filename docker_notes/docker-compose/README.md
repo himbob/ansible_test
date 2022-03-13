@@ -75,3 +75,19 @@ docker network inspect docker-compose_network-aaron
     }
 ]
 ```
+```bash
+#login to one of the containers
+docker exec -it 5b bash
+#look at ip's
+container01#  ip a
+...
+37: eth0@if38: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:42:ac:15:00:03 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 172.21.0.3/16 brd 172.21.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+#ping the other container
+ping ubuntu02
+PING ubuntu02 (172.21.0.2) 56(84) bytes of data.
+64 bytes from ubuntu02.docker-compose_network-aaron (172.21.0.2): icmp_seq=1 ttl=64 time=0.059 ms
+
+```
