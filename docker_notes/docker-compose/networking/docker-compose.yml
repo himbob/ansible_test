@@ -3,12 +3,14 @@ services:
   ubuntu01:
     container_name: ubuntu01
     image: weibeld/ubuntu-networking
+    privileged: true
     command: tail -F anything
     networks:
       - network-aaron  
   ubuntu02:
     container_name: ubuntu02
     image: weibeld/ubuntu-networking
+    privileged: true
     command: tail -F anything
     networks:
       - network-aaron 
