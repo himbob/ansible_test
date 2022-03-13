@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  ubuntu01:
+    container_name: ubuntu01
+    image: weibeld/ubuntu-networking
+    command: tail -F anything
+    networks:
+      - network-aaron  
+  ubuntu02:
+    container_name: ubuntu02
+    image: weibeld/ubuntu-networking
+    command: tail -F anything
+    networks:
+      - network-aaron 
+networks:
+  network-aaron:  
+    driver: bridge
