@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  ubuntu01:
+    container_name: ubuntu03
+    image: weibeld/ubuntu-networking
+    privileged: true
+    command: tail -F anything
+    networks:
+      - swarmoverlay  
+  ubuntu02:
+    container_name: ubuntu04
+    image: weibeld/ubuntu-networking
+    privileged: true
+    command: tail -F anything
+    networks:
+      - swarmoverlay 
+networks:
+  swarmoverlay: 
+    name: ingress  
+    driver: overlay
+    attachable: true

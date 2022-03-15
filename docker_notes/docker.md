@@ -12,6 +12,8 @@ docker network prune
 
 ## basics
 ```bash
+# just in case your base user cant run teh commands without sudo ;-)
+sudo usermod -aG docker $USER
 docker ps
 docker images
 docker start <contID>
