@@ -25,7 +25,7 @@ useradd -d "/home/$USER_USERNAME" -m $USER_USERNAME
 # add user to correct Ubuntu groups for SSH and sudo
 usermod -a -G sudo,ssh $USER_USERNAME
 # remove requirement for password to sudo
-echo -e "\n$USER_USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "\n$USER_USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # install SSH key and fix permissions on user SSH keys
 USER_HOME="/home/$USER_USERNAME"
